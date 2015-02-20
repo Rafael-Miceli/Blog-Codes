@@ -1,2 +1,4 @@
 # Blog-Codes
-Samples of posts  
+====================
+
+###This repo was created to reference the projects, codes or samples used in my posts
