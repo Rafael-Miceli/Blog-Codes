@@ -29,6 +29,15 @@
     <div class="container body-content">
         <div class="jumbotron">
             <h1>Auth Response</h1>
+
+            @if (ViewBag.Playlists != null)
+            {
+                foreach (var item in ViewBag.Playlists.Items)
+                {
+                    @item.Name
+                }
+            }
+            
         </div>
 
         <footer>
