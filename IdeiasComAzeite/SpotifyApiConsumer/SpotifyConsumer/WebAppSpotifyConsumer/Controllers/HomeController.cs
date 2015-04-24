@@ -16,6 +16,21 @@ namespace WebAppSpotifyConsumer.Controllers
         {
             if (string.IsNullOrEmpty(access_token))
                 return View();
+            else
+            {
+                Session["token"] = access_token;
+                return RedirectToAction("ShowPlaylists");
+            }            
+
+            return View();
+        }
+
+        public ActionResult ShowPlaylists()
+        {
+            if (string.IsNullOrEmpty(Session["token"].ToString()))
+                return View("Index");
+
+            var access_token = Session["token"].ToString();
 
             SpotifyService spotifyService = new SpotifyService();
 

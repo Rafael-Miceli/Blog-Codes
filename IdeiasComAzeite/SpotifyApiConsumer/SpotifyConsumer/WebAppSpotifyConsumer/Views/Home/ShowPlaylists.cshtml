@@ -8,12 +8,6 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <script type="text/javascript" language="javascript">
-        var hashes = window.location.hash;
-        hashes = hashes.replace('#', '?');
-        if(hashes !== "")
-            window.location = hashes;
-    </script>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -28,7 +22,15 @@
     </div>
     <div class="container body-content">
         <div class="jumbotron">
-            <h1>Auth Response</h1>            
+            <h1>Playlist</h1>
+
+            @if (ViewBag.Playlists != null)
+            {
+                foreach (var item in ViewBag.Playlists.Items)
+                {
+                    @item.Name
+                }
+            }
             
         </div>
 
