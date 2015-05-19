@@ -45,7 +45,7 @@ namespace WebAppSpotifyConsumer.Controllers
 
         private string GetAuthUri()
         {
-            string clientId = "939de55142e64b519923e66738e3a602";
+            string clientId = "your-client-id";
             string redirectUri = "http://localhost:17789/Home/AuthResponse";
             Scope scope = Scope.PLAYLIST_MODIFY_PRIVATE;
 
