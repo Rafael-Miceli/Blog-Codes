@@ -43,6 +43,8 @@
     <Compile Include="Aluno.cs" />
     <Compile Include="AlunoService.cs" />
     <Compile Include="IAlunoRepo.cs" />
+    <Compile Include="IMateriaService.cs" />
+    <Compile Include="Matricula.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
