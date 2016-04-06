@@ -10,11 +10,13 @@ namespace Escola
     {
         private IAlunoRepo _alunoRepo;
         private IMateriaService _materiaService;
+        private IEmailService _emailService;
 
-        public AlunoService(IAlunoRepo alunoRepo, IMateriaService materiaService)
+        public AlunoService(IAlunoRepo alunoRepo, IMateriaService materiaService, IEmailService emailService)
         {
             _alunoRepo = alunoRepo;
             _materiaService = materiaService;
+            _emailService = emailService;
         }
 
         public void AdcionarAluno(Aluno aluno, List<int> materiasIds)
@@ -28,6 +30,10 @@ namespace Escola
 
             //Adicionado no banco
             _alunoRepo.CriarAluno(aluno);
+
+            //Enviar email
+
+            _emailService.EnviarEmail();
         }
 
         private bool MatriculaDoAlunoJaExiste(string matricula)

@@ -43,6 +43,7 @@
     <Compile Include="Aluno.cs" />
     <Compile Include="AlunoService.cs" />
     <Compile Include="IAlunoRepo.cs" />
+    <Compile Include="IEmailService.cs" />
     <Compile Include="IMateriaService.cs" />
     <Compile Include="Matricula.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
