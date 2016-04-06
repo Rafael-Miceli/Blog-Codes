@@ -27,7 +27,6 @@ namespace Escola.Test
             var aluno = fixture.Build<Aluno>().Without(a => a.Materias).Create();
             var sut = fixture.Create<AlunoService>();
             
-
             //Act
             sut.AdcionarAluno(aluno, null);
 
@@ -59,7 +58,7 @@ namespace Escola.Test
             alunoRepoMock.Verify(x => x.CriarAluno(aluno), Times.Once);
         }
 
-        [TestMethod]
+        [TestMethod]    
         public void Dado_Um_Aluno_Quando_Criar_Se_O_Mesmo_Selecionou_Materia_Deve_Criar_Com_Sucesso()
         {
             //Arrange
@@ -87,6 +86,30 @@ namespace Escola.Test
             Assert.IsTrue(aluno.Materias.Count > 0);
             materiaServiceMock.Verify(x => x.BuscarMateriaisSelecionados(It.IsAny<List<int>>()), Times.Once);
             alunoRepoMock.Verify(x => x.CriarAluno(aluno), Times.Once);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void Dado_Um_Aluno_Quando_Criar_Se_O_Mesmo_Nao_Selecionou_Materia_Deve_Levantar_Uma_Excecao()
+        {
+            //Arrange
+            var fixture = new Fixture();
+            fixture.Customize(new AutoMoqCustomization());
+
+            var materiaServiceMock = fixture.Freeze<Mock<IMateriaService>>();
+            var alunoRepoMock = fixture.Freeze<Mock<IAlunoRepo>>();
+
+            alunoRepoMock.Setup(x => x.ExisteMatricula(It.IsAny<string>())).Returns(false);
+
+            var aluno = fixture.Build<Aluno>().Without(a => a.Materias).Create();
+            var sut = fixture.Create<AlunoService>();
+
+            //Act
+            sut.AdcionarAluno(aluno, new List<int>());
+
+            //Assert
+            materiaServiceMock.Verify(x => x.BuscarMateriaisSelecionados(It.IsAny<List<int>>()), Times.Never);
+            alunoRepoMock.Verify(x => x.CriarAluno(aluno), Times.Never);
         }
     }
 }
