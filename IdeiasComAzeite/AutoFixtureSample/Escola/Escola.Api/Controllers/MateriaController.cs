@@ -1,4 +1,6 @@
-﻿using Escola.Domain.Interfaces;
+﻿using Escola.DataAdo;
+using Escola.Domain;
+using Escola.Domain.Interfaces;
 using Escola.Domain.Model;
 using Escola.ViewModels;
 using System;
@@ -16,6 +18,8 @@ namespace Escola.Api.Controllers
 
         public MateriaController()
         {
+            var materiaRepo = new MateriaRepository();
+            _materiaService = new MateriaService(materiaRepo);
         }
 
         // POST api/values
