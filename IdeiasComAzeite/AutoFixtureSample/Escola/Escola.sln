@@ -11,6 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escola.Domain", "Escola.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escola.ViewModels", "Escola.Dtos\Escola.ViewModels.csproj", "{E2CCDA66-3A0F-472A-9DF4-9E888E300743}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{E97AE136-A90F-40D3-ACCD-C8F9B729DFE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Domain", "1 - Domain", "{1B76A367-799E-4A1F-AAA6-77F04C4A3D5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Data", "2 - Data", "{7FF6D9BA-BDFE-4385-84C9-0F1D704FE49D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escola.DataAdo", "Escola.DataAdo\Escola.DataAdo.csproj", "{607E4756-9BAA-47DF-B301-78D0F9EE4F5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +41,18 @@ Global
 		{E2CCDA66-3A0F-472A-9DF4-9E888E300743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2CCDA66-3A0F-472A-9DF4-9E888E300743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2CCDA66-3A0F-472A-9DF4-9E888E300743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{607E4756-9BAA-47DF-B301-78D0F9EE4F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{607E4756-9BAA-47DF-B301-78D0F9EE4F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{607E4756-9BAA-47DF-B301-78D0F9EE4F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{607E4756-9BAA-47DF-B301-78D0F9EE4F5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5303A63F-3DC7-463D-8E19-35E0C8B37E66} = {E97AE136-A90F-40D3-ACCD-C8F9B729DFE1}
+		{3946B728-7350-4C11-A06B-B8E21F390452} = {1B76A367-799E-4A1F-AAA6-77F04C4A3D5F}
+		{E2CCDA66-3A0F-472A-9DF4-9E888E300743} = {E97AE136-A90F-40D3-ACCD-C8F9B729DFE1}
+		{607E4756-9BAA-47DF-B301-78D0F9EE4F5A} = {7FF6D9BA-BDFE-4385-84C9-0F1D704FE49D}
 	EndGlobalSection
 EndGlobal
