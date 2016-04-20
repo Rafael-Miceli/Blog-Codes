@@ -8,5 +8,6 @@ namespace Escola.Domain.Interfaces
         IEnumerable<Materia> BuscarMateriasSelecionadas(IEnumerable<int> materiasSelecionadasId);
         void CriarNovaMateria(Materia materia);
         Materia BuscarMateriaPorNome(string nomeMateria);
+        IEnumerable<Materia> BuscarMaterias();
     }
 }

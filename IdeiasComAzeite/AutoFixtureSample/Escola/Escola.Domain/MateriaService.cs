@@ -19,6 +19,11 @@ namespace Escola.Domain
             return _materiaRepo.BuscarMateriaPorNome(nomeMateria);
         }
 
+        public IEnumerable<Materia> BuscarMaterias()
+        {
+            return _materiaRepo.BuscarMaterias();
+        }
+
         public IEnumerable<Materia> BuscarMateriasSelecionadas(IEnumerable<int> materiasSelecionadasId)
         {
             return _materiaRepo.BuscarMateriasSelecionadas(materiasSelecionadasId);

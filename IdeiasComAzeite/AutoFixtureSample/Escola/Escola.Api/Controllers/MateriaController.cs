@@ -16,10 +16,14 @@ namespace Escola.Api.Controllers
     {
         private IMateriaService _materiaService;
 
-        public MateriaController()
+        public MateriaController(IMateriaService materiaService)
         {
-            var materiaRepo = new MateriaRepository();
-            _materiaService = new MateriaService(materiaRepo);
+            _materiaService = materiaService;
+        }
+
+        public HttpResponseMessage Get()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, _materiaService.BuscarMaterias());
         }
 
         // POST api/values

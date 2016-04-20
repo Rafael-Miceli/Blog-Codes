@@ -16,6 +16,25 @@ namespace Escola.DataAdo
             return null;
         }
 
+        public IEnumerable<Materia> BuscarMaterias()
+        {
+            return new List<Materia>
+            {
+                new Materia
+                {
+                    Nome = "Física"
+                },
+                new Materia
+                {
+                    Nome = "Química"
+                },
+                new Materia
+                {
+                    Nome = "Matemática"
+                }
+            };
+        }
+
         public IEnumerable<Materia> BuscarMateriasSelecionadas(IEnumerable<int> materiasSelecionadasId)
         {
             //Buscar materias no banco de dados
