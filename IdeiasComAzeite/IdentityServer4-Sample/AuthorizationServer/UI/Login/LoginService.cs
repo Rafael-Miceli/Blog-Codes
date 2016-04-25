@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace IdSvrHost.UI.Login
+namespace AuthorizationServer.UI.Login
 {
     public class LoginService
     {

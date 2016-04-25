@@ -7,7 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace IdSvrHost.UI.Login
+namespace AuthorizationServer.UI.Login
 {
     public class LoginController : Controller
     {

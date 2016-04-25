@@ -1,4 +1,4 @@
-﻿namespace IdSvrHost.UI.Login
+﻿namespace AuthorizationServer.UI.Login
 {
     public class LoginViewModel : LoginInputModel
     {

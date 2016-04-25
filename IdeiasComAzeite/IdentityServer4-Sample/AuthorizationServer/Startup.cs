@@ -3,6 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNet.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using AuthorizationServer.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace AuthorizationServer
 {
@@ -28,11 +29,15 @@ namespace AuthorizationServer
                 {
                     razor.ViewLocationExpanders.Add(new AuthorizationServer.UI.CustomViewLocationExpander());
                 });
+            services.AddTransient<AuthorizationServer.UI.Login.LoginService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(LogLevel.Verbose);
+            loggerFactory.AddDebug(LogLevel.Verbose);
+            
             app.UseIISPlatformHandler();
 
             app.UseIdentityServer();

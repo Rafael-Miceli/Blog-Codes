@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace IdSvrHost.UI.Login
+namespace AuthorizationServer.UI.Login
 {
     public class LoginInputModel
     {

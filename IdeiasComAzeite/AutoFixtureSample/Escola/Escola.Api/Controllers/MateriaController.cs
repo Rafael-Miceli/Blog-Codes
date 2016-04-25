@@ -12,6 +12,7 @@ using System.Web.Http;
 
 namespace Escola.Api.Controllers
 {
+    [Authorize]
     public class MateriaController : ApiController
     {
         private IMateriaService _materiaService;
