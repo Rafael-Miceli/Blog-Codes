@@ -40,7 +40,8 @@ namespace AuthorizationServer.Configuration
                     },
                     RedirectUris = new List<string>
                     {
-                        "http://localhost:50334"
+                        "http://localhost:5001/signin-oidc"
+                        "http://localhost:5001"
                     },
                     Enabled = true
                 }             
