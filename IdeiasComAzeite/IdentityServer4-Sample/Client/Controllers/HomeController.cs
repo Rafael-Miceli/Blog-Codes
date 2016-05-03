@@ -33,5 +33,12 @@ namespace Client.Controllers
         {
             return View();
         }
+        
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.Authentication.SignOutAsync("cookies");
+            return Redirect("http://localhost:5000/ui/logout");
+        }
     }
 }
