@@ -43,6 +43,10 @@ namespace AuthorizationServer.Configuration
                         "http://localhost:5001/signin-oidc",
                         "http://localhost:5001"
                     },
+                    PostLogoutRedirectUris = new List<string>
+                    {
+                        "http://localhost:5001",
+                    },
                     Enabled = true
                 }             
             };

@@ -1,9 +1,11 @@
 ﻿using IdentityServer4.Core;
+using IdentityServer4.Core.Models;
 using IdentityServer4.Core.Services;
 using Microsoft.AspNet.Mvc;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using AuthorizationServer.Configuration;
 
 namespace IdSvrHost.UI.Logout
 {
@@ -28,11 +30,26 @@ namespace IdSvrHost.UI.Logout
         {
             await HttpContext.Authentication.SignOutAsync(Constants.PrimaryAuthenticationType);
 
-            // set this so UI rendering sees an anonymous user
             HttpContext.User = new ClaimsPrincipal(new ClaimsIdentity());
 
             var vm = new LoggedOutViewModel();
-            return View("LoggedOut", vm);
+            
+            vm.ReturnInfo = GetClientReturnInfo(signOutId);
+            
+            return Redirect(vm.ReturnInfo.Uri);
+        }
+        
+        private ClientReturnInfo GetClientReturnInfo(string signOutId)
+        {
+            var client = Clients.Get().FirstOrDefault(c => c.ClientId == signOutId);
+
+            var clientReturnInfo = new ClientReturnInfo
+            {
+                ClientId = client.ClientId,
+                Uri = client.PostLogoutRedirectUris.First() 
+            };
+
+            return clientReturnInfo;
         }
     }
 }

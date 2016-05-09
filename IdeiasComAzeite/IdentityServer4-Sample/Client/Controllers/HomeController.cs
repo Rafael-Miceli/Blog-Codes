@@ -38,7 +38,7 @@ namespace Client.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.Authentication.SignOutAsync("cookies");
-            return Redirect("http://localhost:5000/ui/logout");
+            return Redirect("http://localhost:5000/ui/logout?id=teste_implict");
         }
     }
 }

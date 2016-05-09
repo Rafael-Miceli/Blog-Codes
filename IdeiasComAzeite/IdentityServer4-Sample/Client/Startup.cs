@@ -68,6 +68,8 @@ namespace Client
 
                 options.ClientId = "teste_implict";
                 options.ResponseType = "id_token token";
+                
+                options.PostLogoutRedirectUri = "http://localhost:5001/";
 
                 options.Scope.Add("profile");
                 options.Scope.Add("openid");
