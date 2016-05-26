@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NoAutoFixture", "NoAutoFixture", "{3F780268-4EAF-4413-A37A-CFF86105CEE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escola", "NoAutoFixture\Escola\Escola.csproj", "{66AE8C18-0182-43C5-912A-1068F4477234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escola.Test", "NoAutoFixture\Escola.Test\Escola.Test.csproj", "{290BCA0D-28A4-48D2-AD11-B7B8F85B45F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66AE8C18-0182-43C5-912A-1068F4477234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66AE8C18-0182-43C5-912A-1068F4477234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66AE8C18-0182-43C5-912A-1068F4477234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66AE8C18-0182-43C5-912A-1068F4477234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290BCA0D-28A4-48D2-AD11-B7B8F85B45F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290BCA0D-28A4-48D2-AD11-B7B8F85B45F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290BCA0D-28A4-48D2-AD11-B7B8F85B45F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290BCA0D-28A4-48D2-AD11-B7B8F85B45F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{66AE8C18-0182-43C5-912A-1068F4477234} = {3F780268-4EAF-4413-A37A-CFF86105CEE2}
+		{290BCA0D-28A4-48D2-AD11-B7B8F85B45F0} = {3F780268-4EAF-4413-A37A-CFF86105CEE2}
+	EndGlobalSection
+EndGlobal
