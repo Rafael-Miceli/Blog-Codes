@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServer", "AuthorizationServer\AuthorizationServer.csproj", "{EB4233D1-0F62-47F7-BAB2-EEB59F0CBBB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp_AuthCode", "WebApp_AuthCode\WebApp_AuthCode.csproj", "{15962E52-9036-4A06-BDF9-0DB93923F2A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{EB4233D1-0F62-47F7-BAB2-EEB59F0CBBB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB4233D1-0F62-47F7-BAB2-EEB59F0CBBB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB4233D1-0F62-47F7-BAB2-EEB59F0CBBB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15962E52-9036-4A06-BDF9-0DB93923F2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15962E52-9036-4A06-BDF9-0DB93923F2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15962E52-9036-4A06-BDF9-0DB93923F2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15962E52-9036-4A06-BDF9-0DB93923F2A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +69,6 @@ Global
 		{E2CCDA66-3A0F-472A-9DF4-9E888E300743} = {E97AE136-A90F-40D3-ACCD-C8F9B729DFE1}
 		{607E4756-9BAA-47DF-B301-78D0F9EE4F5A} = {7FF6D9BA-BDFE-4385-84C9-0F1D704FE49D}
 		{EB4233D1-0F62-47F7-BAB2-EEB59F0CBBB8} = {80FF81FF-BCA1-42C8-93A5-E89C45783C31}
+		{15962E52-9036-4A06-BDF9-0DB93923F2A8} = {E97AE136-A90F-40D3-ACCD-C8F9B729DFE1}
 	EndGlobalSection
 EndGlobal

@@ -43,6 +43,30 @@ namespace AuthorizationServer
                         "http://localhost:50335"
                     },
                     Enabled = true
+                },
+                new Client
+                {
+                    ClientId = "teste_code",
+                    ClientName = "Teste OAuth2 Authorization Code",
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    Flow = Flows.Hybrid,
+
+                    AllowedScopes  = new List<string>
+                    {
+                         Constants.StandardScopes.OpenId,
+                         Constants.StandardScopes.Profile,
+                         Constants.StandardScopes.OfflineAccess,
+                         "read"
+                    },
+                    RedirectUris = new List<string>
+                    {
+                        "http://localhost:60758/",
+                        "http://localhost:60758/Home/AuthCallBack"
+                    },
+                    Enabled = true
                 }
             };
         }
