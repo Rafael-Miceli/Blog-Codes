@@ -32,24 +32,13 @@ namespace WebApp_AuthCode
                 Authority = "http://localhost:54734",
                 RedirectUri = "http://localhost:60758/",
                 ResponseType = "code id_token",
-                Scope = "openid profile offline_access",
+                Scope = "openid profile",
                 PostLogoutRedirectUri = "http://localhost:60758/",
                 SignInAsAuthenticationType = "cookies",
 
 
                 Notifications = new OpenIdConnectAuthenticationNotifications
                 {
-                    //SecurityTokenValidated = notification =>
-                    //{
-                    //    var identity = notification.AuthenticationTicket.Identity;
-
-                    //    identity.AddClaim(new Claim("id_token", notification.ProtocolMessage.IdToken));
-                    //    identity.AddClaim(new Claim("access_token", notification.ProtocolMessage.AccessToken));
-
-                    //    notification.AuthenticationTicket = new AuthenticationTicket(identity, notification.AuthenticationTicket.Properties);
-
-                    //    return Task.FromResult(0);
-                    //}
                     AuthorizationCodeReceived = async notification =>
                     {
                         var requestResponse = await OidcClient.CallTokenEndpointAsync(
@@ -63,7 +52,6 @@ namespace WebApp_AuthCode
 
                         identity.AddClaim(new Claim("id_token", requestResponse.IdentityToken));
                         identity.AddClaim(new Claim("access_token", requestResponse.AccessToken));
-                        identity.AddClaim(new Claim("refresh_token", requestResponse.RefreshToken));
 
                         notification.AuthenticationTicket = new AuthenticationTicket(identity, notification.AuthenticationTicket.Properties);
                     },
