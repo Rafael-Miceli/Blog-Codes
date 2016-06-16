@@ -67,6 +67,7 @@ namespace WebApp_AuthCode
 
                         notification.AuthenticationTicket = new AuthenticationTicket(identity, notification.AuthenticationTicket.Properties);
                     },
+
                     RedirectToIdentityProvider = notification =>
                     {
                         if (notification.ProtocolMessage.RequestType != OpenIdConnectRequestType.LogoutRequest)
