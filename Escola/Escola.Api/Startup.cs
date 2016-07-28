@@ -13,22 +13,22 @@ namespace Escola.Api
     {
         public void Configuration(IAppBuilder app)
         {
-            JwtSecurityTokenHandler.InboundClaimTypeMap = new Dictionary<string, string>();
+            //JwtSecurityTokenHandler.InboundClaimTypeMap = new Dictionary<string, string>();
 
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                AuthenticationType = "cookies"
+                AuthenticationType = "Cookies",
+                CookieSecure = CookieSecureOption.Always
             });
 
             app.UseOpenIdConnectAuthentication(new OpenIdConnectAuthenticationOptions
             {
                 ClientId = "teste_implict",
-                Authority = "http://localhost:54734/",
+                Authority = "https://localhost:44305/",
                 RedirectUri = "http://localhost:50335",
-                ResponseType = "id_token token",
-                Scope = "openid profile",
-                SignInAsAuthenticationType = "cookies"               
+                ResponseType = "id_token",
+                SignInAsAuthenticationType = "Cookies"               
             });
         }
     }

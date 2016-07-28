@@ -18,11 +18,11 @@ namespace AuthorizationServer
                 .UseInMemoryClients(InMemoryClients.GetClients())
                 .UseInMemoryUsers(InMemoryUsers.GetUsers());
 
-            var certificado = Convert.FromBase64String(ConfigurationManager.AppSettings["SigningCertificate"]);
-
+            string file = string.Format(@"{0}\Certs\idsrv3test.pfx", AppDomain.CurrentDomain.BaseDirectory);
+           
             var options = new IdentityServerOptions
             {
-                SigningCertificate = new X509Certificate2(certificado, ConfigurationManager.AppSettings["SigningCertificatePassword"]),
+                SigningCertificate = new X509Certificate2(file, "idsrv3test"),
                 RequireSsl = false,
                 Factory = factory
             };
