@@ -43,8 +43,12 @@ namespace InMemDb.Controllers
 
         public string CreateClient(Client client)
         {
+            if(_context.Clients.FirstOrDefault(c => c.Cnpj == client.Cnpj) != null)
+                return "Cnpj já existe!";
+
             _context.Add(client);
             _context.SaveChanges();
+
             return "Funfou";            
         }
     }

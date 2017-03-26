@@ -40,6 +40,32 @@ namespace InMemDbTest
             }            
         }
 
+        [Fact]
+        public void Given_A_Client_With_A_Cnpj_That_Already_Exists_When_Adding_To_Database_Then_Return_Cnpj_Already_Exists_Message()
+        {
+            //Arrange
+            var options = CreateNewContextOptions();
+            CriarMassaDeClient(options);            
+            string result;
+
+            //Act
+            using (var context = new ApplicationDbContext(options))
+            {
+                var sut = new HomeController(context);
+                result = sut.CreateClient(new Client {
+                    Name = "Cliente vindo do teste",
+                    Cnpj = "123456"
+                });
+            }            
+
+            //Assert
+            using (var context = new ApplicationDbContext(options))
+            {
+                Assert.Equal("Cnpj já existe!", result);
+                Assert.Equal(1, context.Clients.Count(c => c.Cnpj == "123456"));                
+            }            
+        }
+
         private static DbContextOptions<ApplicationDbContext> CreateNewContextOptions()
         {
             // Create a fresh service provider, and therefore a fresh
