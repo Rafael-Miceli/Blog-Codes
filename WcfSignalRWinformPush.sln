@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceWithSignalR", "WcfServiceWithSignalR\WcfServiceWithSignalR.csproj", "{EBAB8EC3-4FD9-4860-8284-210AE02DB11C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfSignalRWinformPush.SignalHubs", "WcfSignalRWinformPush.SignalHubs\WcfSignalRWinformPush.SignalHubs.csproj", "{D9064680-1DF4-4520-9D60-CD75C997280C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppSignalRWcfClient", "ConsoleAppSignalRWcfClient\ConsoleAppSignalRWcfClient.csproj", "{ABE351A5-D7F9-4881-8CEA-59CA2A3D241A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBAB8EC3-4FD9-4860-8284-210AE02DB11C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAB8EC3-4FD9-4860-8284-210AE02DB11C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAB8EC3-4FD9-4860-8284-210AE02DB11C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAB8EC3-4FD9-4860-8284-210AE02DB11C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9064680-1DF4-4520-9D60-CD75C997280C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9064680-1DF4-4520-9D60-CD75C997280C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9064680-1DF4-4520-9D60-CD75C997280C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9064680-1DF4-4520-9D60-CD75C997280C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE351A5-D7F9-4881-8CEA-59CA2A3D241A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE351A5-D7F9-4881-8CEA-59CA2A3D241A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE351A5-D7F9-4881-8CEA-59CA2A3D241A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE351A5-D7F9-4881-8CEA-59CA2A3D241A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

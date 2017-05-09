@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WcfApp.Contracts")]
+[assembly: AssemblyTitle("ConsoleAppSignalRWcfClient")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WcfApp.Contracts")]
+[assembly: AssemblyProduct("ConsoleAppSignalRWcfClient")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2d37e6d1-d19a-4621-9945-5dd020ad8de6")]
+[assembly: Guid("abe351a5-d7f9-4881-8cea-59ca2a3d241a")]
 
 // Version information for an assembly consists of the following four values:
 //
