@@ -9,9 +9,16 @@ namespace WcfApp.Services
 {
     public class AlunoService : IAlunoServiceContract
     {
+        IAlunoApplicationService _alunoApplicationService;
+
+        public AlunoService(IAlunoApplicationService alunoApplicationService)
+        {
+            _alunoApplicationService = alunoApplicationService;
+        }
+
         public IEnumerable<string> BuscarNomesDosAlunos()
         {
-            return new List<string> { "Aluno1", "Aluno2" };
+            return _alunoApplicationService.BuscarNomesDosAlunos();
         }
     }
 }
