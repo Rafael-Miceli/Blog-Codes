@@ -10,7 +10,7 @@ GO
 CREATE TABLE [dbo].[Alunos]
 (   
  [Id] [uniqueidentifier] DEFAULT NEWID() NOT NULL,
- [Name] [nchar](50) NULL
+ [Name] [varchar](50) NULL
 ) 
 GO
 
@@ -29,7 +29,7 @@ GO
 CREATE TABLE [dbo].[Alunos]
 (   
  [Id] [uniqueidentifier] DEFAULT NEWID() NOT NULL,
- [Name] [nchar](50) NULL
+ [Name] [varchar](50) NULL
 ) 
 GO
 

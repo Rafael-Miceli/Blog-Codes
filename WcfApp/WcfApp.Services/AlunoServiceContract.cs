@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ServiceModel;
 using WcfApp.Contracts;
 
 namespace WcfApp.Services
 {
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class AlunoService : IAlunoServiceContract
     {
-        IAlunoApplicationService _alunoApplicationService;
+        IAlunoRepoToAnyDb _alunoRepoToAnyDb;
 
-        public AlunoService(IAlunoApplicationService alunoApplicationService)
+        public AlunoService(IAlunoRepoToAnyDb alunoRepoToAnyDb)
         {
-            _alunoApplicationService = alunoApplicationService;
+            _alunoRepoToAnyDb = alunoRepoToAnyDb;
         }
 
         public IEnumerable<string> BuscarNomesDosAlunos()
         {
-            return _alunoApplicationService.BuscarNomesDosAlunos();
+            return new List<string> { _alunoRepoToAnyDb.GetAlunos() };
         }
     }
 }

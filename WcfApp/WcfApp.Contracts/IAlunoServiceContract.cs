@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WcfApp.Contracts
 {
-    [ServiceContract]
+    [ServiceContract]    
     public interface IAlunoServiceContract
     {
         [OperationContract]
