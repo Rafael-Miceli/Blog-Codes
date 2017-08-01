@@ -27,19 +27,29 @@ namespace WcfApp
 
             var clientToken = headers["clientToken"];
 
-            var connStringDb = MontarConn(clientToken);
+            var clientClaim = GetClientClaimFromToken(clientToken);
+
+            var connStringDb = MontarConn(clientClaim);
 
             return new AlunoRepoToAnyDb(connStringDb);
         }
 
-        private static string MontarConn(string clientToken)
+        private static string GetClientClaimFromToken(string clientToken)
         {
-            if (clientToken == "Token1")
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var principal = tokenHandler.ReadToken(clientToken) as JwtSecurityToken;
+
+            return principal.Claims.FirstOrDefault(c => c.Type == "client_id").Value;
+        }
+
+        private static string MontarConn(string clientClaim)
+        {   
+            if (clientClaim == "Client1")
             {
                 return @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AlunosClient1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             }
 
-            if (clientToken == "Token2")
+            if (clientClaim == "Client2")
             {
                 return @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AlunosClient2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; ;
             }
