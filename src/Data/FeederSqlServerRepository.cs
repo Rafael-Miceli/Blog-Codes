@@ -9,11 +9,13 @@ namespace Data
         public IEnumerable<Feeder> GetAll()
         {
             return new List<Feeder> {
-                new Feeder {
-                    Id = 1,
-                    Name = "Hello from SqlServer"
-                }
+                new Feeder("Hello from SqlServer")                
             };
+        }
+
+        public void Create(Feeder feeder)
+        {
+            Console.WriteLine("Criando no SqlServer");
         }
     }
 }
