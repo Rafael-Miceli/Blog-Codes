@@ -34,15 +34,8 @@ namespace MongoData
         public IEnumerable<Feeder> GetAll()
         {
             return Feeders.Find(_ => true).ToList();
-
-            // return new List<Feeder> {
-            //     new Feeder {
-            //         Id = 1,
-            //         Name = "Hello from Mongo"
-            //     }
-            // };
         }
-        
+
         public void Create(Feeder feeder)
         {
             Console.WriteLine("Criando no Mongo");
