@@ -29,6 +29,9 @@ namespace api.Controllers
         {
             try
             {
+                if(string.IsNullOrEmpty(feeder.Name))
+                    return BadRequest("Name is Empty");
+
                 _feederService.Create(feeder);    
                 return Created("Aqui vai a URL da onde encontrar o objeto criado respeitando o HATEOAS", feeder);
             }
