@@ -25,9 +25,17 @@ namespace api.Controllers
         }      
 
         [HttpPost]
-        public void Post([FromBody]Feeder feeder)
+        public IActionResult Post([FromBody]Feeder feeder)
         {
-            
+            try
+            {
+                _feederService.Create(feeder);    
+                return Created("Aqui vai a URL da onde encontrar o objeto criado respeitando o HATEOAS", feeder);
+            }
+            catch (Exception ex)
+            {                
+                return BadRequest(ex.Message);
+            } 
         }
        
     }
