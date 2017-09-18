@@ -19,6 +19,7 @@ using SimpleInjector;
 using SimpleInjector.Lifestyles;
 using SimpleInjector.Integration.AspNetCore;
 using SimpleInjector.Integration.AspNetCore.Mvc;
+using System.Data.SqlClient;
 
 namespace api
 {
@@ -43,7 +44,8 @@ namespace api
             // services.AddTransient<IFeederRepository, FeederMongoRepository>();
         }
 
-        private void IntegrateSimpleInjector(IServiceCollection services) {
+        private void IntegrateSimpleInjector(IServiceCollection services) 
+        {
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -70,15 +72,31 @@ namespace api
             app.UseMvc();
         }
 
-        private void InitializeContainer(IApplicationBuilder app) {
+        private void InitializeContainer(IApplicationBuilder app) 
+        {
             
             container.RegisterMvcControllers(app);
             container.RegisterMvcViewComponents(app);
 
             container.Register<IFeederService, FeederService>(Lifestyle.Scoped);
             //container.Register<IFeederRepository, FeederSqlServerRepository>(Lifestyle.Scoped);
+            //SeedSqlServer();
             container.Register<IFeederRepository, FeederMongoRepository>(Lifestyle.Scoped);
             
+        }
+
+        private void SeedSqlServer()
+        {
+            Console.WriteLine("Seeding SqlServer");
+            using (var connection = new SqlConnection("Server=tcp:localhost,1433;Initial Catalog=DI;Persist Security Info=True;"))
+            {
+                var command = new SqlCommand(@"CREATE DATABASE DI GO CREATE TABLE DI.dbo.Feeder (
+                    ID INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+                    NAME TEXT NOT NULL
+                    ) GO", connection);
+                connection.Open();                
+                command.ExecuteNonQuery();
+            }            
         }
     }
 }
