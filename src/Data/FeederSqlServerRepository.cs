@@ -9,6 +9,7 @@ namespace Data
     {
         public IEnumerable<Feeder> GetAll()
         {
+            //using (var connection = new SqlConnection("Server=tcp:192.168.99.100,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             using (var connection = new SqlConnection("Server=tcp:localhost,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             {
                 var command = new SqlCommand("SELECT Id, Name FROM Feeder", connection);
@@ -31,6 +32,7 @@ namespace Data
         public void Create(Feeder feeder)
         {
             Console.WriteLine("Criando no SqlServer");
+            //using (var connection = new SqlConnection("Server=tcp:192.168.99.100,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             using (var connection = new SqlConnection("Server=tcp:localhost,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             {
                 var command = new SqlCommand($"Insert Into Feeder values ('{feeder.Name}')", connection);

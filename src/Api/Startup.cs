@@ -88,6 +88,7 @@ namespace api
         private void SeedSqlServer()
         {
             Console.WriteLine("Seeding SqlServer");
+            //using (var connection = new SqlConnection("Server=tcp:192.168.99.100,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             using (var connection = new SqlConnection("Server=tcp:localhost,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             {
                 var command = new SqlCommand(@"
