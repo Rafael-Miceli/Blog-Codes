@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mongo:
+    ports:
+     - "27017:27017"
+    image: "mongo"
+  sqlserver:
+    ports:
+     - "1433:1433"
+    image: "microsoft/mssql-server-linux"
+    environment:
+     - ACCEPT_EULA=Y
+     - SA_PASSWORD=whatever12!

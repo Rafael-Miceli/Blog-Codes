@@ -1,0 +1,2 @@
+#RUN -p 27017:27017 mongo
+#RUN -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=whatever12!' -p 1433:1433 -d microsoft/mssql-server-linux
