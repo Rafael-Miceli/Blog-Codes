@@ -21,7 +21,7 @@ namespace MongoData
         {
             try
             {
-                var client = new MongoClient(@"mongodb://192.168.99.100:27017");
+                var client = new MongoClient(@"mongodb://localhost:27017");
                 _mongoDb = client.GetDatabase("local");
             }
             catch (Exception ex) 

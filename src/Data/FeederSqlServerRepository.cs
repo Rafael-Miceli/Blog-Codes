@@ -9,7 +9,7 @@ namespace Data
     {
         public IEnumerable<Feeder> GetAll()
         {
-            using (var connection = new SqlConnection("Server=tcp:YourServer,1433;Initial Catalog=YourDatabase;Persist Security Info=True;"))
+            using (var connection = new SqlConnection("Server=tcp:localhost,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             {
                 var command = new SqlCommand("SELECT Id, Name FROM Feeder", connection);
                 connection.Open();                
@@ -26,16 +26,12 @@ namespace Data
                     return feeders;
                 }
             }
-
-            // return new List<Feeder> {
-            //     new Feeder("Hello from SqlServer")                
-            // };
         }
 
         public void Create(Feeder feeder)
         {
             Console.WriteLine("Criando no SqlServer");
-            using (var connection = new SqlConnection("Server=tcp:YourServer,1433;Initial Catalog=YourDatabase;Persist Security Info=True;"))
+            using (var connection = new SqlConnection("Server=tcp:localhost,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             {
                 var command = new SqlCommand($"Insert Into Feeder values ('{feeder.Name}')", connection);
                 connection.Open();                

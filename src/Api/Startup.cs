@@ -79,8 +79,8 @@ namespace api
             container.RegisterMvcViewComponents(app);
 
             container.Register<IFeederService, FeederService>(Lifestyle.Scoped);
-            //container.Register<IFeederRepository, FeederSqlServerRepository>(Lifestyle.Scoped);
-            //SeedSqlServer();
+            // container.Register<IFeederRepository, FeederSqlServerRepository>(Lifestyle.Scoped);
+            // SeedSqlServer();
             container.Register<IFeederRepository, FeederMongoRepository>(Lifestyle.Scoped);
             
         }
@@ -88,15 +88,24 @@ namespace api
         private void SeedSqlServer()
         {
             Console.WriteLine("Seeding SqlServer");
-            using (var connection = new SqlConnection("Server=tcp:localhost,1433;Initial Catalog=DI;Persist Security Info=True;"))
+            using (var connection = new SqlConnection("Server=tcp:localhost,1433;Initial Catalog=master;User Id=sa;Password=whatever12!"))
             {
-                var command = new SqlCommand(@"CREATE DATABASE DI GO CREATE TABLE DI.dbo.Feeder (
-                    ID INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
-                    NAME TEXT NOT NULL
-                    ) GO", connection);
+                var command = new SqlCommand(@"
+                    IF (NOT EXISTS (SELECT * 
+                    FROM INFORMATION_SCHEMA.TABLES 
+                    WHERE TABLE_SCHEMA = 'dbo' 
+                    AND  TABLE_NAME = 'Feeder'))
+                    BEGIN
+                        CREATE TABLE dbo.Feeder (
+                        ID INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+                        NAME TEXT NOT NULL
+                        )
+                    END
+                    ", connection);
                 connection.Open();                
                 command.ExecuteNonQuery();
             }            
+            Console.WriteLine("SqlServer Succefully Seeded!");
         }
     }
 }
